@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk" data-lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-uk="Адміністрування" data-en="Admin Panel">Адміністрування</title><link rel="stylesheet" href="../css/style.css"></head><body>
+<header><h1 data-uk="Адмінка" data-en="Admin Panel">Адмінка</h1></header>
+<main>
+  <form id="login-form">
+    <label data-uk="Логін" data-en="Username">Логін:<input type="text" id="username"></label><br>
+    <label data-uk="Пароль" data-en="Password">Пароль:<input type="password" id="password"></label><br>
+    <button type="button" onclick="login()" data-uk="Увійти" data-en="Login">Увійти</button>
+  </form>
+  <div id="admin-panel" style="display:none;">
+    <h2 data-uk="Редагування контенту" data-en="Edit Content">Редагування контенту</h2>
+    <div contenteditable="true" style="border:1px solid #ccc; padding:1rem;">Тут можна редагувати текст головної сторінки...</div>
+    <button onclick="saveContent()" data-uk="Зберегти" data-en="Save">Зберегти</button>
+  </div>
+</main><footer><p>&copy; 2025 GreenBox</p></footer>
+<script>
+function login(){
+  if(document.getElementById('username').value==='admin' && document.getElementById('password').value==='1234'){
+    document.getElementById('login-form').style.display='none';
+    document.getElementById('admin-panel').style.display='block';
+  } else alert('Невірні дані');
+}
+function saveContent(){
+  alert('Контент збережено (імітація)');
+}
+</script>
+</body></html>
